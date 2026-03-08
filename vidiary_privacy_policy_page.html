@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViDiary Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for ViDiary mobile application." />
+  <style>
+    :root {
+      --bg: #0f1221;
+      --panel: #171a2b;
+      --panel-2: #1e2238;
+      --text: #e9ecf5;
+      --muted: #aab3c8;
+      --accent: #7c9cff;
+      --border: rgba(255,255,255,0.08);
+      --max: 920px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b0e1b 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, rgba(124,156,255,0.22), transparent 28%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(124,156,255,0.35);
+      border-radius: 999px;
+      color: #c8d4ff;
+      background: rgba(124,156,255,0.08);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    main {
+      padding: 32px 0 64px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(15,18,33,0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      padding: 8px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--text); border-color: rgba(124,156,255,0.4); }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    p, li { color: #dfe5f4; }
+    ul { padding-left: 20px; }
+    strong { color: #fff; }
+    .muted { color: var(--muted); }
+
+    footer {
+      padding: 24px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-box {
+      padding: 16px 18px;
+      border: 1px dashed rgba(124,156,255,0.35);
+      border-radius: 16px;
+      background: rgba(124,156,255,0.06);
+      margin-top: 14px;
+    }
+
+    code.inline {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #dfe5ff;
+    }
+
+    @media (max-width: 640px) {
+      .card { padding: 22px; }
+      .subtitle { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="badge">ViDiary • Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">
+        This Privacy Policy explains how ViDiary handles information when you use the mobile application.
+        ViDiary is designed to help users record short personal video diary entries throughout the day.
+      </p>
+      <div class="meta">
+        Effective date: <strong>[Insert Date]</strong><br />
+        App name: <strong>ViDiary</strong><br />
+        Developer / Publisher: <strong>[Insert Legal Name or Company Name]</strong>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#overview">Overview</a>
+      <a href="#collect">Data We Collect</a>
+      <a href="#use">How Data Is Used</a>
+      <a href="#sharing">Sharing</a>
+      <a href="#storage">Storage & Security</a>
+      <a href="#rights">Your Rights</a>
+      <a href="#children">Children</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="overview" class="card">
+      <h2>1. Overview</h2>
+      <p>
+        ViDiary is a personal journaling application that prompts users to create short video entries during the day.
+        Depending on the version and features you enable, the app may store your entries locally on your device and may process
+        certain technical or account-related information necessary to operate the service.
+      </p>
+      <p>
+        Your videos and diary content are intended for <strong>your personal use</strong>. The app is not designed as a public social network.
+      </p>
+    </section>
+
+    <section id="collect" class="card">
+      <h2>2. Data We Collect</h2>
+      <p>Depending on the features you use, ViDiary may collect or process the following categories of data:</p>
+      <ul>
+        <li><strong>Account information</strong> - such as your email address, sign-in provider identifier, or profile name, if you sign in using Google, Apple, or another authentication provider.</li>
+        <li><strong>User-created content</strong> - including short video diary entries, optional captions, tags, timestamps, and related metadata.</li>
+        <li><strong>Device permissions and local files</strong> - such as camera, microphone, notifications, and access to media storage where required for the app to function.</li>
+        <li><strong>Technical and diagnostic data</strong> - such as app version, device model, operating system, crash logs, and performance information.</li>
+        <li><strong>Subscription or purchase status</strong> - if you offer premium features through app stores or third-party billing services.</li>
+      </ul>
+      <p class="muted">
+        Note: If videos are stored only on the user’s device and are not uploaded to external servers, make that explicit here and in the store listing.
+      </p>
+    </section>
+
+    <section id="use" class="card">
+      <h2>3. How We Use Data</h2>
+      <ul>
+        <li>To provide and operate ViDiary features.</li>
+        <li>To let you record, save, organize, and review your diary entries.</li>
+        <li>To send local reminders or notifications you enable.</li>
+        <li>To maintain account access and subscription status, where applicable.</li>
+        <li>To troubleshoot bugs, improve stability, and protect the app against misuse.</li>
+        <li>To comply with legal obligations.</li>
+      </ul>
+    </section>
+
+    <section id="sharing" class="card">
+      <h2>4. Data Sharing and Disclosure</h2>
+      <p>We do not sell your personal data.</p>
+      <p>We may share limited data only in the following situations:</p>
+      <ul>
+        <li><strong>Service providers</strong> - for authentication, analytics, crash reporting, subscription management, hosting, or other infrastructure support.</li>
+        <li><strong>App store or payment platforms</strong> - such as Google Play or Apple App Store, when needed to process purchases and subscriptions.</li>
+        <li><strong>Legal compliance</strong> - if disclosure is required by law, legal process, or a valid government request.</li>
+        <li><strong>Business transfer</strong> - if the app or developer business is merged, acquired, or sold.</li>
+      </ul>
+      <p>
+        If ViDiary stores entries exclusively on-device and does not upload videos to remote servers, then user video content is not shared externally except where the user explicitly exports or shares it.
+      </p>
+    </section>
+
+    <section id="storage" class="card">
+      <h2>5. Data Storage, Retention, and Security</h2>
+      <p>
+        We take reasonable technical and organizational measures to protect personal information. However, no method of storage,
+        transmission, or security is perfect. In other words, absolute security is one of humanity’s favorite fairy tales.
+      </p>
+      <ul>
+        <li><strong>Local storage</strong> - diary videos may be stored on your device.</li>
+        <li><strong>Cloud or backend storage</strong> - if enabled in your product architecture, certain account or technical data may be processed on secure external infrastructure.</li>
+        <li><strong>Retention</strong> - we retain personal data only as long as necessary for the purposes described in this Policy, unless a longer retention period is required by law.</li>
+      </ul>
+      <p>
+        You are responsible for protecting access to your device and any accounts used to access the app.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>6. Permissions</h2>
+      <p>ViDiary may request the following permissions, depending on platform and enabled features:</p>
+      <ul>
+        <li><strong>Camera</strong> - to record diary videos.</li>
+        <li><strong>Microphone</strong> - to capture audio with your recordings.</li>
+        <li><strong>Notifications</strong> - to remind you to record moments during the day.</li>
+        <li><strong>Photos / Media / Files</strong> - to save, read, export, or compile video content where required.</li>
+      </ul>
+      <p>
+        You can usually manage app permissions through your device settings. Disabling some permissions may limit app functionality.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>7. International Data Transfers</h2>
+      <p>
+        If any personal data is processed outside your country of residence, we will take reasonable steps to ensure such data is protected in accordance with applicable law.
+      </p>
+    </section>
+
+    <section id="rights" class="card">
+      <h2>8. Your Rights and Choices</h2>
+      <p>Depending on your location, you may have rights to:</p>
+      <ul>
+        <li>Access personal data we hold about you.</li>
+        <li>Request correction of inaccurate data.</li>
+        <li>Request deletion of your data.</li>
+        <li>Object to or restrict certain processing.</li>
+        <li>Withdraw consent where processing is based on consent.</li>
+        <li>Request data portability where applicable.</li>
+      </ul>
+      <p>
+        If your data is stored locally on your device only, many deletion and control actions may be performed directly by uninstalling the app or deleting content within the app.
+      </p>
+    </section>
+
+    <section id="children" class="card">
+      <h2>9. Children’s Privacy</h2>
+      <p>
+        ViDiary is not intended for children under the age required by applicable law in their jurisdiction unless specifically stated otherwise.
+        We do not knowingly collect personal data from children in violation of applicable law.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>10. Third-Party Services</h2>
+      <p>
+        ViDiary may rely on third-party services such as authentication providers, payment processors, analytics platforms, crash reporting tools,
+        or hosting providers. Those services may process personal data under their own privacy policies.
+      </p>
+      <p>
+        Examples may include: Google Sign-In, Apple Sign-In, Firebase, RevenueCat, Google Play Billing, Apple App Store, or similar tools,
+        depending on your implementation.
+      </p>
+    </section>
+
+    <section id="changes" class="card">
+      <h2>11. Changes to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will revise the effective date shown at the top of this page.
+        Material changes may also be communicated through the app or other appropriate means.
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>12. Contact Us</h2>
+      <p>
+        If you have questions, requests, or concerns about this Privacy Policy or the app’s privacy practices, contact us here:
+      </p>
+      <div class="contact-box">
+        <strong>[Insert Contact Name or Company]</strong><br />
+        Email: <code class="inline">[Insert contact email]</code><br />
+        Address: <code class="inline">[Insert business address, if applicable]</code>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> ViDiary. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
