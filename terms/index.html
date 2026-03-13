@@ -1,218 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PrivoDiary Terms of Service</title>
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #f7f8fb;
-        --card: #ffffff;
-        --text: #1b2330;
-        --muted: #5b677a;
-        --line: #d9e0ea;
-        --accent: #1f6feb;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrivoDiary Terms of Service</title>
+  <meta name="description" content="Terms of Service for PrivoDiary mobile application." />
+  <style>
+    :root {
+      --bg: #0f1221;
+      --panel: #171a2b;
+      --panel-2: #1e2238;
+      --text: #e9ecf5;
+      --muted: #aab3c8;
+      --accent: #7c9cff;
+      --border: rgba(255,255,255,0.08);
+      --max: 920px;
+    }
 
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-      }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b0e1b 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-      .wrap {
-        max-width: 860px;
-        margin: 32px auto;
-        padding: 0 16px 32px;
-      }
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
 
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 24px;
-      }
+    header {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top right, rgba(124,156,255,0.22), transparent 28%);
+    }
 
-      h1 {
-        margin: 0 0 8px;
-        font-size: 1.8rem;
-      }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(124,156,255,0.35);
+      border-radius: 999px;
+      color: #c8d4ff;
+      background: rgba(124,156,255,0.08);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
 
-      h2 {
-        margin-top: 28px;
-        margin-bottom: 8px;
-        font-size: 1.1rem;
-      }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
 
-      p,
-      li {
-        line-height: 1.6;
-      }
+    .subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 18px;
+      margin: 0;
+    }
 
-      .muted {
-        color: var(--muted);
-      }
+    .meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-      a {
-        color: var(--accent);
-      }
+    main {
+      padding: 32px 0 64px;
+    }
 
-      ul {
-        padding-left: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="wrap">
-      <article class="card">
-        <h1>PrivoDiary Terms of Service</h1>
-        <p class="muted"><strong>Effective date:</strong> March 11, 2026</p>
-        <p class="muted"><strong>Last updated:</strong> March 11, 2026</p>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(15,18,33,0.78);
+      border-bottom: 1px solid var(--border);
+    }
 
-        <p>
-          These Terms of Service ("Terms") govern your access to and use of the
-          PrivoDiary mobile application, website, and related services
-          (collectively, the "Service"). By using the Service, you agree to
-          these Terms.
-        </p>
+    nav .wrap {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
 
-        <h2>1. Eligibility</h2>
-        <p>
-          You must be at least 13 years old (or the minimum age required in your
-          country) to use the Service. If you are under the age of majority in
-          your jurisdiction, you must have permission from a parent or legal
-          guardian.
-        </p>
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      padding: 8px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+      font-size: 14px;
+    }
 
-        <h2>2. Your Account</h2>
-        <ul>
-          <li>
-            You are responsible for maintaining the security of your account and
-            device.
-          </li>
-          <li>
-            You are responsible for all activity that occurs under your account.
-          </li>
-          <li>
-            You agree to provide accurate information and keep it up to date.
-          </li>
-        </ul>
+    nav a:hover {
+      color: var(--text);
+      border-color: rgba(124,156,255,0.4);
+    }
 
-        <h2>3. Privacy</h2>
-        <p>
-          Your use of the Service is also governed by our Privacy Policy:
-          <a href="https://privodiary.com/" target="_blank" rel="noopener"
-            >https://privodiary.com/</a
-          >.
-        </p>
+    .card {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
 
-        <h2>4. User Content</h2>
-        <p>
-          You retain ownership of your videos, tags, and other content you
-          create in the Service ("User Content"). You grant us a limited,
-          non-exclusive license to host, process, and transmit User Content only
-          as needed to operate and improve the Service.
-        </p>
-        <p>
-          You are solely responsible for User Content and must ensure it does
-          not violate applicable laws or third-party rights.
-        </p>
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
 
-        <h2>5. Acceptable Use</h2>
-        <p>You agree not to:</p>
-        <ul>
-          <li>Use the Service for illegal, harmful, or fraudulent purposes.</li>
-          <li>
-            Interfere with the Service, reverse engineer it, or bypass security
-            or payment controls.
-          </li>
-          <li>
-            Upload malware or content that infringes intellectual property or
-            privacy rights.
-          </li>
-        </ul>
+    p, li { color: #dfe5f4; }
+    ul { padding-left: 20px; }
+    strong { color: #fff; }
+    .muted { color: var(--muted); }
 
-        <h2>6. Premium Features and Billing</h2>
-        <ul>
-          <li>
-            Some features are available only with a paid subscription ("Premium").
-          </li>
-          <li>
-            Purchases and renewals are processed by the app store provider
-            (e.g., Google Play), not directly by us.
-          </li>
-          <li>
-            Subscription pricing, free trials, renewals, and cancellation rules
-            are governed by your app store account terms.
-          </li>
-          <li>
-            If Premium ends, paid features may be disabled and your account may
-            continue in trial/free mode.
-          </li>
-        </ul>
+    a {
+      color: #c8d4ff;
+    }
 
-        <h2>7. Third-Party Services</h2>
-        <p>
-          The Service may rely on third-party services (for example, Firebase,
-          Google Sign-In, and AdMob). Their terms and privacy policies apply to
-          your use of those components.
-        </p>
+    a:hover {
+      color: #ffffff;
+    }
 
-        <h2>8. Service Availability and Changes</h2>
-        <p>
-          We may update, modify, suspend, or discontinue any part of the
-          Service at any time. We do not guarantee uninterrupted availability.
-        </p>
+    code.inline {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #dfe5ff;
+    }
 
-        <h2>9. Termination</h2>
-        <p>
-          We may suspend or terminate access if you violate these Terms or if
-          required by law. You may stop using the Service at any time.
-        </p>
+    .contact-box {
+      padding: 16px 18px;
+      border: 1px dashed rgba(124,156,255,0.35);
+      border-radius: 16px;
+      background: rgba(124,156,255,0.06);
+      margin-top: 14px;
+    }
 
-        <h2>10. Disclaimer</h2>
-        <p>
-          The Service is provided "as is" and "as available", without warranties
-          of any kind, express or implied, including merchantability, fitness
-          for a particular purpose, and non-infringement, to the extent
-          permitted by law.
-        </p>
+    footer {
+      padding: 24px 0 56px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
 
-        <h2>11. Limitation of Liability</h2>
-        <p>
-          To the maximum extent permitted by law, PrivoDiary and its affiliates
-          are not liable for indirect, incidental, special, consequential, or
-          punitive damages, or any loss of data, profits, or revenue arising
-          from your use of the Service.
-        </p>
+    @media (max-width: 640px) {
+      .card { padding: 22px; }
+      .subtitle { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="badge">PrivoDiary • Legal</div>
+      <h1>Terms of Service</h1>
+      <p class="subtitle">
+        These Terms of Service govern your access to and use of the PrivoDiary mobile application
+        and related services. By using PrivoDiary, you agree to these Terms.
+      </p>
+      <div class="meta">
+        Effective date: <strong>11.03.2026</strong><br />
+        Last updated: <strong>11.03.2026</strong><br />
+        App name: <strong>PrivoDiary</strong><br />
+        Developer / Publisher: <strong>Yurii Gakhanov</strong>
+      </div>
+    </div>
+  </header>
 
-        <h2>12. Indemnification</h2>
-        <p>
-          You agree to indemnify and hold harmless PrivoDiary from claims,
-          liabilities, and expenses arising from your use of the Service or your
-          violation of these Terms.
-        </p>
+  <nav>
+    <div class="wrap">
+      <a href="/">Privacy Policy</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#account">Your Account</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#content">User Content</a>
+      <a href="#acceptable-use">Acceptable Use</a>
+      <a href="#billing">Premium & Billing</a>
+      <a href="#third-party">Third-Party Services</a>
+      <a href="#availability">Availability</a>
+      <a href="#termination">Termination</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-        <h2>13. Governing Law</h2>
-        <p>
-          These Terms are governed by the laws applicable in your jurisdiction,
-          unless mandatory law provides otherwise.
-        </p>
+  <main class="wrap">
+    <section class="card">
+      <h2>Overview</h2>
+      <p>
+        These Terms of Service ("Terms") govern your access to and use of the PrivoDiary mobile application,
+        website, and related services (collectively, the "Service"). By using the Service, you agree to these Terms.
+      </p>
+    </section>
 
-        <h2>14. Changes to These Terms</h2>
-        <p>
-          We may update these Terms from time to time. Continued use of the
-          Service after updates means you accept the revised Terms.
-        </p>
+    <section id="eligibility" class="card">
+      <h2>1. Eligibility</h2>
+      <p>
+        You must be at least 13 years old, or the minimum age required in your country, to use the Service.
+        If you are under the age of majority in your jurisdiction, you must have permission from a parent or legal guardian.
+      </p>
+    </section>
 
-        <h2>15. Contact</h2>
-        <p>
-          For questions about these Terms, contact:
-          <a href="mailto:contact@privodiary.com">contact@privodiary.com</a>
-        </p>
-      </article>
-    </main>
-  </body>
+    <section id="account" class="card">
+      <h2>2. Your Account</h2>
+      <ul>
+        <li>You are responsible for maintaining the security of your account and device.</li>
+        <li>You are responsible for all activity that occurs under your account.</li>
+        <li>You agree to provide accurate information and keep it up to date.</li>
+      </ul>
+    </section>
+
+    <section id="privacy" class="card">
+      <h2>3. Privacy</h2>
+      <p>
+        Your use of the Service is also governed by our Privacy Policy:
+        <a href="/" rel="noopener">PrivoDiary Privacy Policy</a>.
+      </p>
+    </section>
+
+    <section id="content" class="card">
+      <h2>4. User Content</h2>
+      <p>
+        You retain ownership of your videos, tags, captions, and other content you create in the Service ("User Content").
+      </p>
+      <p>
+        Because PrivoDiary is designed primarily to operate locally on your device, your User Content is generally stored on your device,
+        unless you explicitly export or share it using your device tools or third-party services.
+      </p>
+      <p>
+        You are solely responsible for your User Content and must ensure it does not violate applicable laws or third-party rights.
+      </p>
+    </section>
+
+    <section id="acceptable-use" class="card">
+      <h2>5. Acceptable Use</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the Service for illegal, harmful, or fraudulent purposes.</li>
+        <li>Interfere with the Service, reverse engineer it, or bypass security or payment controls.</li>
+        <li>Upload or distribute malware, malicious code, or harmful content.</li>
+        <li>Use the Service in a way that infringes intellectual property, privacy, or other rights of third parties.</li>
+      </ul>
+    </section>
+
+    <section id="billing" class="card">
+      <h2>6. Premium Features and Billing</h2>
+      <ul>
+        <li>Some features may be available only with a paid subscription or purchase ("Premium").</li>
+        <li>Purchases and renewals are processed by the app store provider, such as Google Play, and not directly by us.</li>
+        <li>Subscription pricing, renewals, cancellation terms, and refunds are governed by your app store account terms and policies.</li>
+        <li>If Premium ends, paid features may be disabled and your account may continue in free or limited mode where applicable.</li>
+      </ul>
+    </section>
+
+    <section id="third-party" class="card">
+      <h2>7. Third-Party Services</h2>
+      <p>
+        The Service may rely on third-party services where necessary to support functionality,
+        including Google Sign-In, Google Play, and Google Play Billing.
+      </p>
+      <p>
+        Their terms and privacy policies apply to your use of those components.
+      </p>
+    </section>
+
+    <section id="availability" class="card">
+      <h2>8. Service Availability and Changes</h2>
+      <p>
+        We may update, modify, suspend, or discontinue any part of the Service at any time.
+        We do not guarantee uninterrupted or error-free availability.
+      </p>
+    </section>
+
+    <section id="termination" class="card">
+      <h2>9. Termination</h2>
+      <p>
+        We may suspend or terminate access to the Service if you violate these Terms or if required by law.
+        You may stop using the Service at any time.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>10. Disclaimer</h2>
+      <p>
+        The Service is provided "as is" and "as available", without warranties of any kind, express or implied,
+        including warranties of merchantability, fitness for a particular purpose, and non-infringement,
+        to the extent permitted by law.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>11. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, PrivoDiary and its affiliates are not liable for indirect,
+        incidental, special, consequential, or punitive damages, or any loss of data, profits, or revenue
+        arising from your use of the Service.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>12. Indemnification</h2>
+      <p>
+        You agree to indemnify and hold harmless PrivoDiary from claims, liabilities, and expenses arising
+        from your use of the Service or your violation of these Terms.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>13. Governing Law</h2>
+      <p>
+        These Terms are governed by the laws applicable in your jurisdiction, unless mandatory law provides otherwise.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>14. Changes to These Terms</h2>
+      <p>
+        We may update these Terms from time to time. Continued use of the Service after updates means you accept the revised Terms.
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>15. Contact</h2>
+      <p>
+        If you have questions about these Terms, contact us here:
+      </p>
+      <div class="contact-box">
+        <strong>Yurii Gakhanov</strong><br />
+        Email: <code class="inline">support@privodiary.com</code><br />
+        Address: <code class="inline">C. Daganzo 3, 28028 Madrid, Spain</code>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> PrivoDiary. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
