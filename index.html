@@ -7,144 +7,179 @@
   <meta name="description" content="Privacy Policy for PrivoDiary mobile application." />
   <style>
     :root {
-      --bg: #0f1221;
-      --panel: #171a2b;
-      --panel-2: #1e2238;
-      --text: #e9ecf5;
-      --muted: #aab3c8;
-      --accent: #7c9cff;
-      --border: rgba(255,255,255,0.08);
-      --max: 920px;
+      --bg: #0b1020;
+      --panel: rgba(18, 24, 44, 0.88);
+      --panel-2: rgba(25, 32, 58, 0.92);
+      --text: #edf1fb;
+      --muted: #aeb8d3;
+      --accent: #8ba4ff;
+      --accent-2: #c0ccff;
+      --line: rgba(255,255,255,0.09);
+      --soft: rgba(139,164,255,0.12);
+      --max: 980px;
+      --shadow: 0 16px 40px rgba(0,0,0,0.28);
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #0b0e1b 0%, var(--bg) 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.68;
+      background:
+        radial-gradient(circle at top right, rgba(139,164,255,0.18), transparent 28%),
+        radial-gradient(circle at top left, rgba(88,111,201,0.12), transparent 22%),
+        linear-gradient(180deg, #070b16 0%, #0b1020 100%);
     }
-
-    .wrap {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
     header {
-      padding: 56px 0 28px;
-      border-bottom: 1px solid var(--border);
-      background: radial-gradient(circle at top right, rgba(124,156,255,0.22), transparent 28%);
+      padding: 48px 0 24px;
+      border-bottom: 1px solid var(--line);
     }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 1px solid rgba(124,156,255,0.35);
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
       border-radius: 999px;
-      color: #c8d4ff;
-      background: rgba(124,156,255,0.08);
+      border: 1px solid rgba(139,164,255,0.25);
+      background: rgba(139,164,255,0.08);
+      color: var(--accent-2);
       font-size: 14px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
-
     h1 {
       margin: 0 0 12px;
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.05;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.04;
       letter-spacing: -0.03em;
     }
-
     .subtitle {
-      color: var(--muted);
-      max-width: 720px;
-      font-size: 18px;
       margin: 0;
+      max-width: 760px;
+      font-size: 18px;
+      color: var(--muted);
     }
-
     .meta {
-      margin-top: 20px;
+      margin-top: 18px;
       color: var(--muted);
       font-size: 14px;
     }
-
-    main {
-      padding: 32px 0 64px;
+    .lang-box {
+      min-width: 190px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
     }
-
+    .lang-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    select {
+      width: 100%;
+      border: 1px solid rgba(139,164,255,0.22);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #0f1529;
+      color: var(--text);
+      font: inherit;
+    }
+    .utility-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .utility-links a {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-size: 13px;
+    }
     nav {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(15,18,33,0.78);
-      border-bottom: 1px solid var(--border);
+      background: rgba(11, 16, 32, 0.78);
+      border-bottom: 1px solid var(--line);
     }
-
     nav .wrap {
       display: flex;
       gap: 10px;
       overflow-x: auto;
       padding: 12px 0;
     }
-
     nav a {
+      white-space: nowrap;
       text-decoration: none;
       color: var(--muted);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
       padding: 8px 12px;
       border-radius: 999px;
-      white-space: nowrap;
       font-size: 14px;
     }
-
-    nav a:hover { color: var(--text); border-color: rgba(124,156,255,0.4); }
-
+    nav a:hover, a:hover { color: var(--text); border-color: rgba(139,164,255,0.35); }
+    main { padding: 28px 0 64px; }
+    .note {
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(139,164,255,0.18);
+      background: rgba(139,164,255,0.07);
+      color: var(--accent-2);
+    }
     .card {
       background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--border);
-      border-radius: 20px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
       padding: 28px;
       margin-bottom: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      box-shadow: var(--shadow);
     }
-
     h2 {
-      margin-top: 0;
+      margin: 0 0 14px;
       font-size: 24px;
       letter-spacing: -0.02em;
     }
-
-    p, li { color: #dfe5f4; }
-    ul { padding-left: 20px; }
+    p, li { color: var(--text); }
+    ul { padding-left: 22px; }
     strong { color: #fff; }
     .muted { color: var(--muted); }
-
-    footer {
-      padding: 24px 0 56px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
     .contact-box {
+      margin-top: 12px;
       padding: 16px 18px;
-      border: 1px dashed rgba(124,156,255,0.35);
+      border: 1px dashed rgba(139,164,255,0.34);
       border-radius: 16px;
-      background: rgba(124,156,255,0.06);
-      margin-top: 14px;
+      background: rgba(139,164,255,0.06);
     }
-
     code.inline {
       background: rgba(255,255,255,0.08);
       padding: 2px 6px;
       border-radius: 6px;
-      color: #dfe5ff;
+      color: #e8edff;
     }
-
-    @media (max-width: 640px) {
-      .card { padding: 22px; }
+    footer {
+      padding: 20px 0 48px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 720px) {
+      .topbar { flex-direction: column; }
+      .lang-box { width: 100%; }
+      .card { padding: 22px; border-radius: 20px; }
       .subtitle { font-size: 16px; }
     }
   </style>
@@ -152,206 +187,210 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="badge">PrivoDiary • Legal</div>
-      <h1>Privacy Policy</h1>
-      <p class="subtitle">
-        This Privacy Policy explains how PrivoDiary handles information when you use the mobile application.
-        PrivoDiary is designed to help users record short personal video diary entries throughout the day.
-      </p>
-      <div class="meta">
-        Effective date: <strong>08.03.2026</strong><br />
-        App name: <strong>PrivoDiary</strong><br />
-        Developer / Publisher: <strong>Yurii Gakhanov</strong>
+      <div class="topbar">
+        <div>
+          <div class="eyebrow" id="eyebrow"></div>
+          <h1 id="pageTitle"></h1>
+          <p class="subtitle" id="pageSubtitle"></p>
+          <div class="meta" id="pageMeta"></div>
+        </div>
+        <div class="lang-box">
+          <label class="lang-label" id="langLabel" for="langSelect"></label>
+          <select id="langSelect" aria-label="Language selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+          </select>
+          <div class="utility-links">
+            <a href="/terms/" id="termsLinkTop"></a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
-
   <nav>
-    <div class="wrap">
-      <a href="/terms/">Terms</a>
-      <a href="#overview">Overview</a>
-      <a href="#collect">Data We Collect</a>
-      <a href="#use">How Data Is Used</a>
-      <a href="#sharing">Sharing</a>
-      <a href="#storage">Storage & Security</a>
-      <a href="#rights">Your Rights</a>
-      <a href="#children">Children</a>
-      <a href="#changes">Changes</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <div class="wrap" id="navLinks"></div>
   </nav>
-
   <main class="wrap">
-    <section id="overview" class="card">
-      <h2>1. Overview</h2>
-      <p>
-        PrivoDiary is a personal journaling application that prompts users to create short video entries during the day.
-        The app is designed primarily to operate locally on the user’s device.
-      </p>
-      <p>
-        Video diary entries and related user content are stored locally on the user’s device unless the user explicitly chooses to export or share them.
-        PrivoDiary does not upload user video content to external servers as part of its core functionality.
-      </p>
-      <p>
-        Certain limited account-related data may be processed in connection with Google Sign-In and subscription or app access features, where applicable.
-      </p>
-    </section>
-
-    <section id="collect" class="card">
-      <h2>2. Data We Collect</h2>
-      <p>PrivoDiary may process limited categories of data depending on the features you use:</p>
-      <ul>
-        <li><strong>Account information</strong> - such as your email address, Google account identifier, display name, and basic profile information provided through Google Sign-In.</li>
-        <li><strong>User-created content</strong> - short video diary entries, optional captions, timestamps, and related metadata stored locally on your device.</li>
-        <li><strong>Device permissions</strong> - such as camera, microphone, notifications, and media access, used to enable the app’s functionality on your device.</li>
-        <li><strong>Subscription or access status</strong> - information necessary to determine whether premium features are available to your account.</li>
-      </ul>
-      <p class="muted">
-        PrivoDiary does not upload or store user video diary content on external servers as part of its core functionality.
-      </p>
-    </section>
-
-    <section id="use" class="card">
-      <h2>3. How We Use Data</h2>
-      <ul>
-        <li>To authenticate users through Google Sign-In.</li>
-        <li>To provide access to app features, including premium functionality where applicable.</li>
-        <li>To let you record, save, organize, and review diary entries on your device.</li>
-        <li>To send local reminders or notifications that you enable.</li>
-        <li>To compile recorded clips into a daily video on your device.</li>
-      </ul>
-    </section>
-
-    <section id="sharing" class="card">
-      <h2>4. Data Sharing and Disclosure</h2>
-      <p>
-        PrivoDiary does not sell user personal data.
-      </p>
-      <p>
-        User-created video diary content remains stored locally on the device and is not shared by PrivoDiary with third parties as part of the app’s core functionality.
-      </p>
-      <p>
-        Certain account-related data may be processed by third-party providers where necessary to support sign-in, app distribution, subscription management, or payment processing,
-        including Google and app store platforms, in accordance with their own terms and privacy policies.
-      </p>
-      <p>
-        If you choose to export, transfer, back up, or share your content using third-party apps, cloud services, social networks, file managers, or device tools,
-        such actions are performed at your own discretion and responsibility.
-      </p>
-      <p>
-        PrivoDiary is not responsible for disclosure, loss, or unauthorized access resulting from user-initiated sharing, insecure device handling, third-party services chosen by the user,
-        or compromise of the user’s device or accounts.
-      </p>
-    </section>
-
-    <section id="storage" class="card">
-      <h2>5. Data Storage, Retention, and Security</h2>
-      <p>
-        Video diary content is stored locally on your device. PrivoDiary does not maintain external storage of your video diary content as part of its core functionality.
-      </p>
-      <p>
-        Limited account-related information associated with Google Sign-In or subscription status may be processed as necessary to provide access to the app and its features.
-      </p>
-      <p>
-        We implement reasonable technical and organizational measures designed to protect personal information. However, no method of storage, transmission, or security system can be guaranteed to be completely secure. Therefore, absolute security cannot be assured.
-      </p>
-      <ul>
-        <li><strong>Local storage</strong> - diary videos and related content are stored on your device.</li>
-        <li><strong>Retention</strong> - locally stored content remains on your device until you delete it, uninstall the app, or otherwise remove it.</li>
-      </ul>
-      <p>
-        You are responsible for protecting access to your device, your Google account, exported files, backups, and any third-party services you use.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>6. Permissions</h2>
-      <p>PrivoDiary may request the following permissions, depending on platform and enabled features:</p>
-      <ul>
-        <li><strong>Camera</strong> - to record diary videos.</li>
-        <li><strong>Microphone</strong> - to capture audio with your recordings.</li>
-        <li><strong>Notifications</strong> - to remind you to record moments during the day.</li>
-        <li><strong>Photos / Media / Files</strong> - to save, read, export, or compile video content where required.</li>
-      </ul>
-      <p>
-        You can usually manage app permissions through your device settings. Disabling some permissions may limit app functionality.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>7. International Data Transfers</h2>
-      <p>
-        PrivoDiary does not transfer personal data internationally because the app does not collect or transmit personal data to external servers.
-      </p>
-    </section>
-
-    <section id="rights" class="card">
-      <h2>8. Your Rights and Choices</h2>
-      <p>Depending on your location, you may have rights to:</p>
-      <ul>
-        <li>Access personal data processed in connection with your account.</li>
-        <li>Request correction of inaccurate account data.</li>
-        <li>Request deletion of personal data where applicable.</li>
-        <li>Delete locally stored diary content directly from the app or your device.</li>
-        <li>Stop using the app at any time.</li>
-      </ul>
-    </section>
-    
-    <section id="children" class="card">
-      <h2>9. Children’s Privacy</h2>
-      <p>
-        PrivoDiary is not intended for children under the age required by applicable law in their jurisdiction unless specifically stated otherwise.
-        The app does not knowingly collect personal data from children or any other users.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>10. Third-Party Services</h2>
-      <p>
-        PrivoDiary may rely on third-party services where necessary to support app functionality, including Google Sign-In, Google Play, and Google Play Billing.
-      </p>
-      <p>
-        Such third-party services may process personal data in accordance with their own terms and privacy policies.
-      </p>
-    </section>
-
-    <section id="changes" class="card">
-      <h2>11. Changes to This Privacy Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. When we do, we will revise the effective date shown at the top of this page.
-        Material changes may also be communicated through the app or other appropriate means.
-      </p>
-    </section>
-    
-    <section id="contact" class="card">
-      <h2>12. Contact Us</h2>
-      <p>
-        If you have questions, requests, or concerns about this Privacy Policy or the app’s privacy practices, contact us here:
-      </p>
-      <div class="contact-box">
-        <strong>Yurii Gakhanov</strong><br />
-        Email: <code class="inline">support@privodiary.com</code><br />
-        Address: <code class="inline">C. Daganzo 3, 28028 Madrid, Spain</code>
-      </div>
-    </section>
-    
-    <section id="terms" class="card">
-      <h2>Terms</h2>
-      <p>
-        <a href="/terms/">Terms</a>
-      </p>
-    </section>
-    
+    <div class="note" id="introNote"></div>
+    <div id="content"></div>
   </main>
-
   <footer>
-    <div class="wrap">
-      © <span id="year"></span> PrivoDiary. All rights reserved.
-    </div>
+    <div class="wrap" id="footerText"></div>
   </footer>
-
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const translations = {
+      en: {
+        htmlLang: 'en',
+        title: 'PrivoDiary Privacy Policy',
+        description: 'Privacy Policy for PrivoDiary mobile application.',
+        eyebrow: 'PrivoDiary · Legal',
+        pageTitle: 'Privacy Policy',
+        pageSubtitle: 'This Privacy Policy explains how PrivoDiary handles information when you use the mobile application.',
+        pageMeta: 'Effective date: <strong>08 March 2026</strong><br>App name: <strong>PrivoDiary</strong><br>Developer / Publisher: <strong>Yurii Gakhanov</strong>',
+        langLabel: 'Language',
+        termsLink: 'Terms of Service',
+        introNote: 'Short version: video diary content stays on your device. PrivoDiary uses Google Sign-In and may process limited account-related data only to provide access to the app and premium features.',
+        nav: [
+          ['terms', '/terms/', 'Terms'],
+          ['overview', '#overview', 'Overview'],
+          ['collect', '#collect', 'Data'],
+          ['use', '#use', 'Use'],
+          ['sharing', '#sharing', 'Sharing'],
+          ['storage', '#storage', 'Storage'],
+          ['rights', '#rights', 'Your rights'],
+          ['children', '#children', 'Children'],
+          ['changes', '#changes', 'Changes'],
+          ['contact', '#contact', 'Contact']
+        ],
+        sections: [
+          ['overview', '1. Overview', `<p>PrivoDiary is a personal video diary application that prompts users to create short entries during the day.</p><p>The app is designed primarily to operate locally on the user’s device. Video diary content is not uploaded to external servers as part of the app’s core functionality unless the user deliberately exports or shares it by using third-party tools or services.</p><p>PrivoDiary uses <strong>Google Sign-In</strong> and may process limited account-related data that is necessary to authenticate the user, determine access to premium features, and keep the app working as intended.</p>`],
+          ['collect', '2. Data we collect', `<p>Depending on the features you use, PrivoDiary may process the following categories of data:</p><ul><li><strong>Account information</strong> — such as your email address, Google account identifier, display name, and other basic profile data provided through Google Sign-In.</li><li><strong>User-created content</strong> — such as video diary entries, optional notes, tags, timestamps, and related metadata stored locally on your device.</li><li><strong>Device permissions</strong> — such as camera, microphone, notifications, and media access, used only to enable the app’s functions on your device.</li><li><strong>Subscription or access status</strong> — information necessary to determine whether premium features are available to your account.</li></ul><p class="muted">PrivoDiary does not upload or remotely store user video diary content as part of its core functionality.</p>`],
+          ['use', '3. How data is used', `<ul><li>To authenticate users through Google Sign-In.</li><li>To provide access to the application and premium features, where applicable.</li><li>To let you record, save, organise, review, and export diary entries on your device.</li><li>To send local reminders or notifications that you enable.</li><li>To compile recorded clips into daily summary videos on your device.</li><li>To comply with legal obligations, where required.</li></ul>`],
+          ['sharing', '4. Data sharing and disclosure', `<p>PrivoDiary does <strong>not sell</strong> user personal data.</p><p>User-created video diary content remains stored locally on the device and is not shared by PrivoDiary with third parties as part of the app’s core functionality.</p><p>Certain limited account-related data may be processed by third parties where necessary to support sign-in, app distribution, subscription management, or payment processing, including Google and app store platforms, under their own privacy policies and terms.</p><p>If you choose to export, transfer, back up, or share your content by using third-party apps, cloud services, social networks, file managers, or device tools, those actions are performed at <strong>your own discretion and responsibility</strong>.</p>`],
+          ['storage', '5. Data storage, retention, and security', `<p>Video diary content is stored locally on your device. PrivoDiary does not maintain external storage of your video diary content as part of its core functionality.</p><p>Limited account-related information associated with Google Sign-In or subscription status may be processed to provide access to the app and its premium functions.</p><p>We implement reasonable technical and organisational measures designed to protect personal information. However, no method of storage, transmission, or security system can be guaranteed to be completely secure. Therefore, absolute security cannot be assured.</p><ul><li><strong>Local storage</strong> — diary videos and related content are stored on your device.</li><li><strong>Retention</strong> — locally stored content remains on your device until you delete it, uninstall the app, or otherwise remove it.</li></ul><p>You are responsible for protecting access to your device, your Google account, exported files, backups, and any third-party services you use.</p>`],
+          ['permissions', '6. Permissions', `<p>Depending on your device and the features you enable, PrivoDiary may request:</p><ul><li><strong>Camera</strong> — to record diary videos.</li><li><strong>Microphone</strong> — to capture audio together with video recordings.</li><li><strong>Notifications</strong> — to send recording reminders.</li><li><strong>Photos / Media / Files</strong> — to save, read, export, and compile video content where required.</li></ul><p>You can manage permissions through your device settings. Disabling certain permissions may limit the app’s functionality.</p>`],
+          ['transfers', '7. International data transfers', `<p>PrivoDiary does not transfer user-created video diary content to external servers as part of its core functionality.</p><p>Where limited account-related data is processed by third-party providers such as Google, such processing may involve international data transfers in accordance with those providers’ legal safeguards and policies.</p>`],
+          ['rights', '8. Your rights and choices', `<p>Depending on your location, you may have rights to:</p><ul><li>Access personal data processed in connection with your account.</li><li>Request correction of inaccurate account data.</li><li>Request deletion of personal data where applicable.</li><li>Delete locally stored diary content directly from the app or your device.</li><li>Withdraw consent where processing is based on consent.</li><li>Stop using the app at any time.</li></ul>`],
+          ['children', '9. Children’s privacy', `<p>PrivoDiary is not intended for children under the age required by applicable law in their jurisdiction unless specifically stated otherwise.</p><p>The app does not knowingly collect personal data from children in violation of applicable law.</p>`],
+          ['third-party', '10. Third-party services', `<p>PrivoDiary may rely on third-party services where necessary to support app functionality, including <strong>Google Sign-In</strong>, <strong>Google Play</strong>, and <strong>Google Play Billing</strong>.</p><p>Such third-party services may process personal data in accordance with their own terms and privacy policies.</p>`],
+          ['changes', '11. Changes to this Privacy Policy', `<p>We may update this Privacy Policy from time to time. When we do, we will revise the effective date shown at the top of this page. Material changes may also be communicated through the app or by other appropriate means.</p>`],
+          ['contact', '12. Contact us', `<p>If you have questions, requests, or concerns about this Privacy Policy or the app’s privacy practices, contact us here:</p><div class="contact-box"><strong>Yurii Gakhanov</strong><br>Email: <code class="inline">privodiary@gmail.com</code><br>Address: <code class="inline">C. Daganzo 3, 28028 Madrid, Spain</code></div>`]
+        ],
+        footer: '© <span id="year"></span> PrivoDiary. All rights reserved.'
+      },
+      ru: {
+        htmlLang: 'ru',
+        title: 'PrivoDiary — Политика конфиденциальности',
+        description: 'Политика конфиденциальности мобильного приложения PrivoDiary.',
+        eyebrow: 'PrivoDiary · Правовая информация',
+        pageTitle: 'Политика конфиденциальности',
+        pageSubtitle: 'В этом документе объясняется, как PrivoDiary обрабатывает информацию при использовании мобильного приложения.',
+        pageMeta: 'Дата вступления в силу: <strong>08 марта 2026 г.</strong><br>Название приложения: <strong>PrivoDiary</strong><br>Разработчик / издатель: <strong>Yurii Gakhanov</strong>',
+        langLabel: 'Язык',
+        termsLink: 'Пользовательское соглашение',
+        introNote: 'Коротко: видеодневник хранится на вашем устройстве. PrivoDiary использует Google Sign-In и обрабатывает только ограниченные данные аккаунта, необходимые для входа в приложение и работы премиум-функций.',
+        nav: [
+          ['terms', '/terms/', 'Условия'],
+          ['overview', '#overview', 'Обзор'],
+          ['collect', '#collect', 'Данные'],
+          ['use', '#use', 'Использование'],
+          ['sharing', '#sharing', 'Передача'],
+          ['storage', '#storage', 'Хранение'],
+          ['rights', '#rights', 'Ваши права'],
+          ['children', '#children', 'Дети'],
+          ['changes', '#changes', 'Изменения'],
+          ['contact', '#contact', 'Контакты']
+        ],
+        sections: [
+          ['overview', '1. Общие положения', `<p>PrivoDiary — это приложение видеодневника, которое несколько раз в день предлагает пользователю записывать короткие личные видео.</p><p>Приложение в первую очередь работает <strong>локально на устройстве пользователя</strong>. Пользовательский видеоконтент не загружается на внешние серверы как часть основного функционала приложения, если только сам пользователь не экспортирует или не отправляет его с помощью сторонних сервисов.</p><p>PrivoDiary использует <strong>Google Sign-In</strong> и может обрабатывать ограниченные данные, связанные с аккаунтом, если это необходимо для аутентификации, предоставления доступа к премиум-функциям и корректной работы приложения.</p>`],
+          ['collect', '2. Какие данные могут обрабатываться', `<p>В зависимости от того, какими функциями вы пользуетесь, PrivoDiary может обрабатывать следующие категории данных:</p><ul><li><strong>Данные аккаунта</strong> — например, адрес электронной почты, идентификатор Google-аккаунта, имя профиля и иные базовые сведения, передаваемые через Google Sign-In.</li><li><strong>Пользовательский контент</strong> — видеозаписи дневника, необязательные текстовые заметки, теги, отметки времени и связанная с ними метаинформация, которая хранится локально на вашем устройстве.</li><li><strong>Разрешения устройства</strong> — доступ к камере, микрофону, уведомлениям и медиатеке, используемый только для работы функций приложения на вашем устройстве.</li><li><strong>Статус подписки или доступа</strong> — сведения, необходимые для определения того, доступны ли вашему аккаунту премиум-функции.</li></ul><p class="muted">PrivoDiary не загружает и не хранит пользовательский видеоконтент на удалённых серверах в рамках своего основного функционала.</p>`],
+          ['use', '3. Для чего используются данные', `<ul><li>Для аутентификации пользователей через Google Sign-In.</li><li>Для предоставления доступа к приложению и премиум-функциям, если они оформлены.</li><li>Для записи, сохранения, организации, просмотра и экспорта дневниковых записей на вашем устройстве.</li><li>Для отправки локальных напоминаний и уведомлений, которые вы включили.</li><li>Для сборки ежедневных видеосводок из сохранённых роликов непосредственно на вашем устройстве.</li><li>Для соблюдения требований законодательства, когда это необходимо.</li></ul>`],
+          ['sharing', '4. Передача и раскрытие данных', `<p>PrivoDiary <strong>не продаёт</strong> персональные данные пользователей.</p><p>Пользовательский видеоконтент остаётся на устройстве и не передаётся PrivoDiary третьим лицам как часть основного функционала приложения.</p><p>Определённые ограниченные данные аккаунта могут обрабатываться третьими лицами, если это необходимо для входа в приложение, распространения приложения, управления подпиской или обработки платежей, включая Google и магазины приложений. Такая обработка регулируется их собственными документами и правилами.</p><p>Если вы самостоятельно экспортируете, резервируете, переносите или публикуете свой контент с помощью сторонних приложений, облачных сервисов, социальных сетей, файловых менеджеров или инструментов устройства, такие действия совершаются <strong>по вашему усмотрению и под вашу ответственность</strong>.</p>`],
+          ['storage', '5. Хранение, срок хранения и безопасность', `<p>Видеоконтент дневника хранится локально на вашем устройстве. PrivoDiary не поддерживает внешнее хранение этого контента как часть основного функционала приложения.</p><p>Ограниченные сведения, связанные с Google Sign-In или статусом подписки, могут обрабатываться в объёме, необходимом для доступа к приложению и его премиум-функциям.</p><p>Мы принимаем разумные технические и организационные меры, направленные на защиту персональной информации. Однако ни один способ хранения, передачи данных или система защиты не могут гарантировать абсолютную безопасность. Поэтому абсолютная безопасность не гарантируется.</p><ul><li><strong>Локальное хранение</strong> — видеозаписи и связанный контент хранятся на вашем устройстве.</li><li><strong>Срок хранения</strong> — локально сохранённый контент остаётся на устройстве до тех пор, пока вы не удалите его, не удалите приложение или не уберёте данные иным способом.</li></ul><p>Вы самостоятельно отвечаете за защиту доступа к вашему устройству, вашему Google-аккаунту, экспортированным файлам, резервным копиям и выбранным вами сторонним сервисам.</p>`],
+          ['permissions', '6. Разрешения', `<p>В зависимости от устройства и включённых функций PrivoDiary может запрашивать:</p><ul><li><strong>Камеру</strong> — для записи видеодневника.</li><li><strong>Микрофон</strong> — для записи звука вместе с видео.</li><li><strong>Уведомления</strong> — для напоминаний о записи моментов.</li><li><strong>Фото / медиа / файлы</strong> — для сохранения, чтения, экспорта и сборки видеоконтента.</li></ul><p>Управлять разрешениями можно через настройки устройства. Отключение отдельных разрешений может ограничить работу приложения.</p>`],
+          ['transfers', '7. Международная передача данных', `<p>PrivoDiary не передаёт пользовательский видеоконтент на внешние серверы в рамках своего основного функционала.</p><p>Если ограниченные данные аккаунта обрабатываются сторонними провайдерами, такими как Google, такая обработка может включать международную передачу данных в соответствии с их политиками и применимыми правовыми гарантиями.</p>`],
+          ['rights', '8. Ваши права и выбор', `<p>В зависимости от вашей юрисдикции у вас могут быть следующие права:</p><ul><li>получить доступ к данным, которые обрабатываются в связи с вашим аккаунтом;</li><li>требовать исправления неточных данных аккаунта;</li><li>требовать удаления персональных данных, если это применимо;</li><li>удалять локально сохранённый контент прямо в приложении или на устройстве;</li><li>отозвать согласие, если обработка основана на согласии;</li><li>прекратить использование приложения в любой момент.</li></ul>`],
+          ['children', '9. Конфиденциальность детей', `<p>PrivoDiary не предназначено для детей младше возраста, установленного применимым законодательством их юрисдикции, если прямо не указано иное.</p><p>Приложение не собирает осознанно персональные данные детей с нарушением применимого законодательства.</p>`],
+          ['third-party', '10. Сторонние сервисы', `<p>PrivoDiary может использовать сторонние сервисы, если это необходимо для работы приложения, включая <strong>Google Sign-In</strong>, <strong>Google Play</strong> и <strong>Google Play Billing</strong>.</p><p>Такие сервисы могут обрабатывать персональные данные в соответствии со своими собственными условиями и политиками конфиденциальности.</p>`],
+          ['changes', '11. Изменения этой Политики конфиденциальности', `<p>Мы можем время от времени обновлять эту Политику конфиденциальности. Когда это происходит, мы изменяем дату вступления документа в силу в верхней части страницы. О существенных изменениях также может сообщаться через приложение или иным уместным способом.</p>`],
+          ['contact', '12. Как с нами связаться', `<p>Если у вас есть вопросы, запросы или замечания по поводу этой Политики конфиденциальности или практики обработки данных в приложении, вы можете связаться с нами:</p><div class="contact-box"><strong>Yurii Gakhanov</strong><br>Email: <code class="inline">privodiary@gmail.com</code><br>Адрес: <code class="inline">C. Daganzo 3, 28028 Madrid, Spain</code></div>`]
+        ],
+        footer: '© <span id="year"></span> PrivoDiary. Все права защищены.'
+      },
+      es: {
+        htmlLang: 'es',
+        title: 'PrivoDiary — Política de Privacidad',
+        description: 'Política de Privacidad de la aplicación móvil PrivoDiary.',
+        eyebrow: 'PrivoDiary · Información legal',
+        pageTitle: 'Política de Privacidad',
+        pageSubtitle: 'Este documento explica cómo PrivoDiary trata la información cuando utilizas la aplicación móvil.',
+        pageMeta: 'Fecha de entrada en vigor: <strong>08 de marzo de 2026</strong><br>Nombre de la aplicación: <strong>PrivoDiary</strong><br>Desarrollador / Editor: <strong>Yurii Gakhanov</strong>',
+        langLabel: 'Idioma',
+        termsLink: 'Términos del Servicio',
+        introNote: 'En resumen: el contenido de tu videodiario permanece en tu dispositivo. PrivoDiary utiliza Google Sign-In y solo trata datos limitados de la cuenta cuando son necesarios para el acceso a la app y a las funciones premium.',
+        nav: [
+          ['terms', '/terms/', 'Términos'],
+          ['overview', '#overview', 'Resumen'],
+          ['collect', '#collect', 'Datos'],
+          ['use', '#use', 'Uso'],
+          ['sharing', '#sharing', 'Cesión'],
+          ['storage', '#storage', 'Conservación'],
+          ['rights', '#rights', 'Tus derechos'],
+          ['children', '#children', 'Menores'],
+          ['changes', '#changes', 'Cambios'],
+          ['contact', '#contact', 'Contacto']
+        ],
+        sections: [
+          ['overview', '1. Resumen general', `<p>PrivoDiary es una aplicación de videodiario personal que invita al usuario a grabar breves entradas a lo largo del día.</p><p>La aplicación está diseñada principalmente para funcionar <strong>de forma local en el dispositivo del usuario</strong>. El contenido del videodiario no se sube a servidores externos como parte de la funcionalidad principal de la app, salvo que el propio usuario decida exportarlo o compartirlo mediante herramientas o servicios de terceros.</p><p>PrivoDiary utiliza <strong>Google Sign-In</strong> y puede tratar datos limitados relacionados con la cuenta cuando ello sea necesario para autenticar al usuario, habilitar funciones premium y asegurar el correcto funcionamiento de la aplicación.</p>`],
+          ['collect', '2. Qué datos pueden tratarse', `<p>Según las funciones que utilices, PrivoDiary puede tratar las siguientes categorías de datos:</p><ul><li><strong>Datos de cuenta</strong> — por ejemplo, tu dirección de correo electrónico, identificador de cuenta de Google, nombre de perfil y otra información básica facilitada a través de Google Sign-In.</li><li><strong>Contenido generado por el usuario</strong> — como vídeos del diario, notas de texto opcionales, etiquetas, marcas temporales y metadatos relacionados, almacenados localmente en tu dispositivo.</li><li><strong>Permisos del dispositivo</strong> — como cámara, micrófono, notificaciones y acceso a archivos o contenido multimedia, utilizados únicamente para permitir el funcionamiento de la app en tu dispositivo.</li><li><strong>Estado de suscripción o acceso</strong> — información necesaria para determinar si tu cuenta tiene habilitadas funciones premium.</li></ul><p class="muted">PrivoDiary no sube ni almacena de forma remota el contenido de vídeo del usuario como parte de su funcionalidad principal.</p>`],
+          ['use', '3. Cómo se usan los datos', `<ul><li>Para autenticar usuarios mediante Google Sign-In.</li><li>Para proporcionar acceso a la aplicación y a las funciones premium, cuando corresponda.</li><li>Para grabar, guardar, organizar, revisar y exportar entradas del diario en tu dispositivo.</li><li>Para enviar recordatorios o notificaciones locales que hayas activado.</li><li>Para generar en tu dispositivo vídeos-resumen diarios a partir de los clips grabados.</li><li>Para cumplir con obligaciones legales, cuando sea necesario.</li></ul>`],
+          ['sharing', '4. Cesión y divulgación de datos', `<p>PrivoDiary <strong>no vende</strong> datos personales de los usuarios.</p><p>El contenido de vídeo creado por el usuario permanece almacenado localmente en el dispositivo y no es compartido por PrivoDiary con terceros como parte de la funcionalidad principal de la aplicación.</p><p>Determinados datos limitados de la cuenta pueden ser tratados por terceros cuando sea necesario para el inicio de sesión, la distribución de la app, la gestión de suscripciones o el procesamiento de pagos, incluidos Google y las plataformas de tiendas de aplicaciones, conforme a sus propios términos y políticas.</p><p>Si decides exportar, transferir, respaldar o compartir tu contenido mediante aplicaciones de terceros, servicios en la nube, redes sociales, gestores de archivos o herramientas del dispositivo, dichas acciones se realizan <strong>bajo tu propia decisión y responsabilidad</strong>.</p>`],
+          ['storage', '5. Conservación y seguridad', `<p>El contenido del videodiario se almacena localmente en tu dispositivo. PrivoDiary no mantiene almacenamiento externo de ese contenido como parte de su funcionalidad principal.</p><p>La información limitada asociada a Google Sign-In o al estado de la suscripción puede tratarse en la medida necesaria para proporcionar acceso a la app y a sus funciones premium.</p><p>Aplicamos medidas técnicas y organizativas razonables destinadas a proteger la información personal. No obstante, ningún método de almacenamiento, transmisión o sistema de seguridad puede garantizar una seguridad absoluta. Por ello, no puede asegurarse una protección total.</p><ul><li><strong>Almacenamiento local</strong> — los vídeos del diario y el contenido relacionado se guardan en tu dispositivo.</li><li><strong>Plazo de conservación</strong> — el contenido almacenado localmente permanece en tu dispositivo hasta que lo elimines, desinstales la aplicación o lo borres por otro medio.</li></ul><p>Eres responsable de proteger el acceso a tu dispositivo, a tu cuenta de Google, a los archivos exportados, a las copias de seguridad y a cualquier servicio de terceros que utilices.</p>`],
+          ['permissions', '6. Permisos', `<p>Según tu dispositivo y las funciones que actives, PrivoDiary puede solicitar:</p><ul><li><strong>Cámara</strong> — para grabar vídeos del diario.</li><li><strong>Micrófono</strong> — para capturar el audio junto con la grabación de vídeo.</li><li><strong>Notificaciones</strong> — para recordarte que grabes momentos durante el día.</li><li><strong>Fotos / multimedia / archivos</strong> — para guardar, leer, exportar y compilar contenido de vídeo cuando sea necesario.</li></ul><p>Puedes gestionar los permisos desde la configuración de tu dispositivo. Desactivar determinados permisos puede limitar el funcionamiento de la aplicación.</p>`],
+          ['transfers', '7. Transferencias internacionales', `<p>PrivoDiary no transfiere el contenido de vídeo creado por el usuario a servidores externos como parte de su funcionalidad principal.</p><p>Cuando determinados datos limitados de la cuenta sean tratados por proveedores externos, como Google, dicho tratamiento puede implicar transferencias internacionales de datos conforme a sus salvaguardas legales y políticas aplicables.</p>`],
+          ['rights', '8. Tus derechos y opciones', `<p>Dependiendo de tu jurisdicción, puedes tener derecho a:</p><ul><li>acceder a los datos personales tratados en relación con tu cuenta;</li><li>solicitar la rectificación de datos inexactos de la cuenta;</li><li>solicitar la supresión de datos personales cuando proceda;</li><li>eliminar el contenido almacenado localmente directamente desde la app o desde tu dispositivo;</li><li>retirar tu consentimiento cuando el tratamiento se base en él;</li><li>dejar de utilizar la aplicación en cualquier momento.</li></ul>`],
+          ['children', '9. Privacidad de los menores', `<p>PrivoDiary no está dirigida a menores de la edad exigida por la legislación aplicable en su jurisdicción, salvo que se indique expresamente lo contrario.</p><p>La aplicación no recopila conscientemente datos personales de menores en vulneración de la legislación aplicable.</p>`],
+          ['third-party', '10. Servicios de terceros', `<p>PrivoDiary puede apoyarse en servicios de terceros cuando ello sea necesario para el funcionamiento de la aplicación, incluidos <strong>Google Sign-In</strong>, <strong>Google Play</strong> y <strong>Google Play Billing</strong>.</p><p>Dichos servicios pueden tratar datos personales de conformidad con sus propios términos y políticas de privacidad.</p>`],
+          ['changes', '11. Cambios en esta Política de Privacidad', `<p>Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo hagamos, revisaremos la fecha de entrada en vigor indicada al inicio de esta página. Los cambios materiales también podrán comunicarse a través de la aplicación o por otros medios adecuados.</p>`],
+          ['contact', '12. Contacto', `<p>Si tienes preguntas, solicitudes o dudas sobre esta Política de Privacidad o sobre las prácticas de privacidad de la aplicación, puedes ponerte en contacto con nosotros aquí:</p><div class="contact-box"><strong>Yurii Gakhanov</strong><br>Email: <code class="inline">privodiary@gmail.com</code><br>Dirección: <code class="inline">C. Daganzo 3, 28028 Madrid, Spain</code></div>`]
+        ],
+        footer: '© <span id="year"></span> PrivoDiary. Todos los derechos reservados.'
+      }
+    };
+
+    function detectLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const explicit = params.get('lang');
+      if (explicit && translations[explicit]) return explicit;
+      const saved = localStorage.getItem('privo_lang');
+      if (saved && translations[saved]) return saved;
+      const browser = (navigator.language || 'en').slice(0,2).toLowerCase();
+      return translations[browser] ? browser : 'en';
+    }
+
+    function withLang(url, lang) {
+      const absolute = new URL(url, window.location.origin);
+      absolute.searchParams.set('lang', lang);
+      if (window.location.pathname.includes('/terms/')) {
+        absolute.pathname = '/terms/';
+      }
+      return absolute.pathname + absolute.search;
+    }
+
+    function render(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = t.htmlLang;
+      document.title = t.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', t.description);
+      document.getElementById('eyebrow').textContent = t.eyebrow;
+      document.getElementById('pageTitle').textContent = t.pageTitle;
+      document.getElementById('pageSubtitle').textContent = t.pageSubtitle;
+      document.getElementById('pageMeta').innerHTML = t.pageMeta;
+      document.getElementById('langLabel').textContent = t.langLabel;
+      document.getElementById('termsLinkTop').textContent = t.termsLink;
+      document.getElementById('termsLinkTop').href = withLang('/terms/', lang);
+      document.getElementById('introNote').textContent = t.introNote;
+      document.getElementById('footerText').innerHTML = t.footer;
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const nav = document.getElementById('navLinks');
+      nav.innerHTML = t.nav.map(([id, href, label]) => `<a href="${href.startsWith('#') ? href : withLang(href, lang)}" data-id="${id}">${label}</a>`).join('');
+
+      const content = document.getElementById('content');
+      content.innerHTML = t.sections.map(([id, title, html]) => `<section id="${id}" class="card"><h2>${title}</h2>${html}</section>`).join('');
+
+      document.getElementById('langSelect').value = lang;
+      localStorage.setItem('privo_lang', lang);
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState({}, '', url.pathname + url.search + url.hash);
+    }
+
+    const initialLang = detectLanguage();
+    document.getElementById('langSelect').addEventListener('change', (e) => render(e.target.value));
+    render(initialLang);
   </script>
 </body>
 </html>
