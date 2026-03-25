@@ -34,8 +34,7 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      overflow-x: hidden;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       color: var(--text);
       line-height: 1.6;
       background:
@@ -66,8 +65,7 @@
     .brand img { width: 44px; height: 44px; border-radius: 14px; box-shadow: 0 10px 22px rgba(255,140,26,0.20); }
     .brand-name { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
     .brand-tag { font-size: 12px; color: var(--muted); margin-top: 2px; }
-    .nav { display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; width:100%; }
-    .nav-links { display:flex; gap:10px; flex-wrap:wrap; }
+    .nav { display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
     .nav a, .lang-switch button {
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.55);
@@ -115,19 +113,34 @@
     .beta-callout strong { display:block; margin-bottom: 4px; font-size: 15px; }
     .beta-callout span { color: var(--muted); font-size: 14px; }
 
-    .hero-visual {
-      position: relative; min-height: 620px;
+    .hero-visual { position: relative; }
+    .phone-stack {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-rows: repeat(7, minmax(44px, auto));
+      gap: 16px;
+      align-items: stretch;
     }
-    .phone-stack { position: relative; width: 100%; height: 100%; }
     .phone {
-      position:absolute; border-radius: 34px; overflow:hidden; background: #e9dff4; border:1px solid rgba(111,81,160,0.12); box-shadow: var(--shadow);
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #e9dff4;
+      border: 1px solid rgba(111,81,160,0.12);
+      box-shadow: var(--shadow);
+      min-width: 0;
     }
     .phone img { width:100%; height:100%; object-fit: cover; }
-    .phone.main { width: 50%; right: 3%; top: 2%; z-index: 2; transform: rotate(4deg); }
-    .phone.side { width: 38%; left: 2%; top: 16%; z-index: 1; transform: rotate(-8deg); }
-    .phone.bottom { width: 43%; left: 28%; bottom: 1%; z-index: 3; transform: rotate(-2deg); }
+    .phone.main { grid-column: 5 / 11; grid-row: 1 / 6; transform: rotate(4deg); z-index: 2; }
+    .phone.side { grid-column: 1 / 6; grid-row: 2 / 6; transform: rotate(-6deg); z-index: 1; }
+    .phone.bottom { grid-column: 7 / 12; grid-row: 5 / 8; transform: rotate(-2deg); z-index: 3; }
     .floating-card {
-      position:absolute; left: 0; bottom: 18%; z-index:4; max-width: 260px;
+      position: relative;
+      grid-column: 1 / 5;
+      grid-row: 5 / 7;
+      z-index: 4;
+      align-self: center;
+      max-width: 100%;
       border-radius: 22px; padding: 16px 18px; background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(244,239,248,0.84)); border:1px solid rgba(133,112,173,0.10); box-shadow: var(--shadow);
     }
     .floating-card strong { display:block; font-size:15px; margin-bottom:6px; }
@@ -151,6 +164,37 @@
     .card p { margin:0; color: var(--muted); }
     .steps .step-num { font-size: 13px; color: var(--primary); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
     .showcase { display:grid; grid-template-columns: .92fr 1.08fr; gap: 18px; }
+    .video-showcase { display:grid; grid-template-columns: 1.02fr .98fr; gap: 18px; align-items: center; }
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(241,235,246,0.88));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .video-frame video {
+      width: 100%;
+      display: block;
+      border-radius: 24px;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: #000;
+    }
+    .video-meta {
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items:center;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .video-points { display:grid; gap: 12px; }
+    .point { padding: 18px 20px; border-radius: 24px; background: var(--panel); border:1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .point strong { display:block; margin-bottom: 6px; font-size: 18px; letter-spacing: -0.02em; }
+    .point span { color: var(--muted); }
     .showcase-copy ul { padding-left: 20px; margin: 12px 0 0; color: var(--muted); }
     .showcase-copy li { margin-bottom: 8px; }
     .screens-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -190,72 +234,37 @@
     .mini-links a { text-decoration:none; color: var(--muted); padding:10px 14px; border-radius:999px; border:1px solid var(--line); background: rgba(255,255,255,0.7); }
     footer { padding: 28px 0 54px; color: var(--muted); }
     footer .foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:20px; }
-    @media (max-width: 1040px) {
-      .hero-grid, .showcase, .quote, .final-card { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 560px; }
-      .phone.main { width: 52%; }
+    @media (max-width: 1160px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { max-width: 760px; margin: 0 auto; }
+      .showcase, .quote, .final-card, .video-showcase { grid-template-columns: 1fr; }
     }
     @media (max-width: 860px) {
       .grid-3, .grid-2, .pricing, .screens-grid { grid-template-columns: 1fr; }
       .topbar-inner { flex-direction: column; align-items: stretch; }
       .nav { justify-content: space-between; }
-      .hero-visual { min-height: 520px; }
-      .phone.main { width: 58%; }
-      .phone.side { width: 44%; }
-      .phone.bottom { width: 48%; }
+      .phone-stack { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: auto; }
+      .phone.side { grid-column: 1 / 4; grid-row: 2 / 4; }
+      .phone.main { grid-column: 3 / 7; grid-row: 1 / 4; }
+      .phone.bottom { grid-column: 2 / 6; grid-row: 4 / 6; }
+      .floating-card { grid-column: 1 / 4; grid-row: 4 / 5; }
     }
     @media (max-width: 620px) {
-      .wrap { width: min(calc(100% - 24px), var(--max)); }
-      .topbar-inner { padding: 12px 0; }
-      .nav { gap:8px; justify-content: flex-start; }
-      .nav-links { display:none; }
-      .lang-switch { width: 100%; }
-      .lang-switch button { flex: 1 1 0; }
-      header.hero { padding: 36px 0 28px; }
+      .nav { gap:8px; }
+      .nav-links { display:none !important; }
       h1 { font-size: 42px; }
-      .hero p, .section-head p { font-size: 16px; }
-      .hero-grid { gap: 24px; }
+      .hero p { font-size: 16px; }
       .cta-row { flex-direction: column; }
       .btn { width: 100%; }
-      .hero-visual { min-height: auto; }
-      .phone-stack {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        align-items: start;
+      .phone-stack { grid-template-columns: 1fr; gap: 14px; }
+      .phone, .phone.side, .phone.main, .phone.bottom, .floating-card {
+        grid-column: auto;
+        grid-row: auto;
+        transform: none;
       }
-      .phone {
-        position: relative;
-        inset: auto;
-        width: 100% !important;
-        aspect-ratio: 9 / 16;
-        transform: none !important;
-        border-radius: 24px;
-      }
-      .phone.main { grid-column: 1 / -1; max-width: 320px; margin: 0 auto; }
-      .phone.side, .phone.bottom { max-width: 100%; }
-      .floating-card {
-        position: relative;
-        inset: auto;
-        grid-column: 1 / -1;
-        max-width: none;
-        padding: 14px 16px;
-        font-size: 13px;
-      }
+      .phone { max-width: 320px; margin: 0 auto; }
+      .floating-card { max-width: 320px; margin: 0 auto; padding: 14px; font-size: 13px; }
       .card, .plan, .final-card { padding: 22px; border-radius: 24px; }
-      .price { font-size: 36px; }
-      .mini-links a { flex: 1 1 100%; text-align: center; }
-    }
-    @media (max-width: 420px) {
-      .brand img { width: 38px; height: 38px; border-radius: 12px; }
-      .brand-name { font-size: 19px; }
-      h1 { font-size: 36px; }
-      .eyebrow, .premium-chip { font-size: 12px; }
-      .section-head h2 { font-size: 30px; }
-      .card, .plan, .final-card { padding: 18px; border-radius: 20px; }
-      .screen-card { border-radius: 24px; }
-      .screen-card .caption { padding: 12px 14px 14px; }
-      .quote blockquote { font-size: 26px; }
     }
   </style>
 </head>
@@ -270,7 +279,7 @@
         </div>
       </a>
       <div class="nav">
-        <div class="nav-links">
+        <div class="nav-links" style="display:flex; gap:10px; flex-wrap:wrap;">
           <a href="#how" data-i18n="navHow"></a>
           <a href="#why" data-i18n="navWhy"></a>
           <a href="#premium" data-i18n="navPremium"></a>
@@ -338,6 +347,32 @@
           <div class="icon-badge">🧭</div>
           <h3 data-i18n="step3Title"></h3>
           <p data-i18n="step3Text"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="words-video">
+    <div class="wrap video-showcase">
+      <div class="video-frame">
+        <video autoplay muted loop playsinline controls preload="metadata" poster="assets/note.jpg">
+          <source src="assets/summary-words.mp4" type="video/mp4">
+        </video>
+        <div class="video-meta">
+          <span data-i18n="videoMetaLeft"></span>
+          <span data-i18n="videoMetaRight"></span>
+        </div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:14px;">
+          <div class="label" data-i18n="videoLabel"></div>
+          <h2 data-i18n="videoTitle"></h2>
+          <p data-i18n="videoText"></p>
+        </div>
+        <div class="video-points">
+          <div class="point"><strong data-i18n="videoPoint1Title"></strong><span data-i18n="videoPoint1Text"></span></div>
+          <div class="point"><strong data-i18n="videoPoint2Title"></strong><span data-i18n="videoPoint2Text"></span></div>
+          <div class="point"><strong data-i18n="videoPoint3Title"></strong><span data-i18n="videoPoint3Text"></span></div>
         </div>
       </div>
     </div>
@@ -484,6 +519,17 @@
         betaTitle: 'Closed testing access',
         betaText: 'To join the closed test, send an email to support@privodiary.com and ask for access.',
         heroNote: 'No social feed. No pressure to perform. Just a private space to notice what your day really felt like.',
+        videoLabel: 'Text to video',
+        videoTitle: 'Words can become part of the day, too.',
+        videoText: 'Text notes can appear inside the daily summary as a calm word-by-word video moment. This helps quieter entries stay visible instead of disappearing between clips.',
+        videoMetaLeft: 'Real summary example',
+        videoMetaRight: 'Word-by-word reveal',
+        videoPoint1Title: 'A gentle visual rhythm',
+        videoPoint1Text: 'Short phrases unfold softly, so a written note feels like part of the day rather than a separate tool.',
+        videoPoint2Title: 'Useful when video is not right',
+        videoPoint2Text: 'Some moments are easier to write than to record. They still deserve a place in the story of the day.',
+        videoPoint3Title: 'One timeline, one memory',
+        videoPoint3Text: 'Video clips and text notes stay in chronological order, so the summary feels coherent and calm.',
         floatingTitle: 'A few honest seconds are enough',
         floatingText: 'Small moments, gently kept, can tell the truth more clearly than memory alone.',
         howLabel: 'How it works',
@@ -543,6 +589,17 @@
         betaTitle: 'Acceso al test cerrado',
         betaText: 'Para participar en el closed testing, envía un correo a support@privodiary.com solicitando acceso.',
         heroNote: 'Sin feed social. Sin presión por aparentar. Solo un espacio privado para notar cómo se sintió realmente tu día.',
+        videoLabel: 'Texto a vídeo',
+        videoTitle: 'Las palabras también pueden formar parte del día.',
+        videoText: 'Las notas de texto pueden aparecer dentro del resumen diario como un momento visual tranquilo, palabra por palabra. Así, las entradas más silenciosas no desaparecen entre los clips.',
+        videoMetaLeft: 'Ejemplo real de resumen',
+        videoMetaRight: 'Aparición palabra por palabra',
+        videoPoint1Title: 'Un ritmo visual suave',
+        videoPoint1Text: 'Las frases cortas aparecen con calma para que una nota escrita se sienta parte del día y no una herramienta aparte.',
+        videoPoint2Title: 'Útil cuando el vídeo no encaja',
+        videoPoint2Text: 'Hay momentos que es más fácil escribir que grabar. Aun así, merecen un lugar en la historia del día.',
+        videoPoint3Title: 'Una sola línea temporal',
+        videoPoint3Text: 'Los clips de vídeo y las notas de texto se mantienen en orden cronológico para que el resumen resulte coherente y sereno.',
         floatingTitle: 'Bastan unos segundos honestos',
         floatingText: 'Los momentos pequeños, guardados con suavidad, pueden decir la verdad con más claridad que la memoria sola.',
         howLabel: 'Cómo funciona',
@@ -602,6 +659,17 @@
         betaTitle: 'Доступ к закрытому тестированию',
         betaText: 'Чтобы участвовать в закрытом тестировании, отправь письмо на support@privodiary.com и запроси доступ.',
         heroNote: 'Без социальной ленты. Без давления выглядеть лучше. Просто личное пространство, чтобы замечать, каким на самом деле был твой день.',
+        videoLabel: 'Текст в видео',
+        videoTitle: 'Слова тоже могут стать частью дня.',
+        videoText: 'Текстовые заметки могут появиться внутри итога дня как спокойный момент раскрытия слово за словом. Так тихие записи остаются видимыми и не теряются между видеоклипами.',
+        videoMetaLeft: 'Реальный пример итога',
+        videoMetaRight: 'Слово за словом',
+        videoPoint1Title: 'Мягкий визуальный ритм',
+        videoPoint1Text: 'Короткие фразы раскрываются плавно, поэтому текстовая заметка ощущается частью дня, а не отдельным инструментом.',
+        videoPoint2Title: 'Полезно, когда видео не подходит',
+        videoPoint2Text: 'Некоторые моменты легче написать, чем записать. Им всё равно заслужен свой день в истории дня.',
+        videoPoint3Title: 'Одна шкала времени, одна память',
+        videoPoint3Text: 'Видеоклипы и текстовые заметки сохраняются в хронологическом порядке, поэтому итог получается связным и спокойным.',
         floatingTitle: 'Иногда достаточно нескольких честных секунд',
         floatingText: 'Небольшие моменты, сохранённые мягко и без нажима, могут рассказать правду яснее, чем память сама по себе.',
         howLabel: 'Как это работает',
